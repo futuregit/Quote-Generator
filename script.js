@@ -20,11 +20,11 @@ async function getQuotes() {
         const response = await fetch(apiUrl);
         apiQuotes = await response.json();
         let { text, author } = newQuote();
-        console.log('This is the text ', author);
+        quote.innerHTML = text
         if(author === null || undefined){
             author = 'Unknown'
-        };
-        writer.innerHTML = author;
+        }
+        writer.innerHTML = author
     } catch (err) {
         // Catch Error Here
     }
